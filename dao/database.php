@@ -88,11 +88,31 @@ class database{
         if($name=="categoryTable"){
             array_splice($this->categoryTable,0,sizeof($this->categoryTable));
         }
-        if($name=="categoryTable"){
+        if($name=="accessoryTable"){
             array_splice($this->categoryTable,0,sizeof($this->accessoryTable));
         }
     }
-    function tableById($id,$row){
-
+    function updatetableById($id,$row){
+        if(get_class($row) == "product"){
+            for($i=0;$i <sizeof($this->productTable); $i++){
+                if($this->productTable[$i]->getId()== $id){
+                    $this->productTable[$i] = $row;
+                }
+            }
+        }
+        if(get_class($row) == "category"){
+            for($i=0;$i <sizeof($this->categoryTable); $i++){
+                if($this->categoryTable[$i]->getId()== $id){
+                    $this->categoryTable[$i] = $row;
+                }
+            }
+        }
+        if(get_class($row) == "accessory"){
+            for($i=0;$i <sizeof($this->accessoryTable); $i++){
+                if($this->accessoryTable[$i]->getId()== $id){
+                    $this->accessoryTable[$i] = $row;
+                }
+            }
+        }
     }
 }

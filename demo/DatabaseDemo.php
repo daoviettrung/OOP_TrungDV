@@ -27,7 +27,7 @@ class DatabaseDemo
     {
         $db = new database();
         $row = new product(1, "trung", "dep trai");
-        $db->updatable("productTable", $row);
+        $db->updatetableById(1, $row);
     }
     function deleteTableTest()
     {
@@ -51,4 +51,5 @@ class DatabaseDemo
         $db->insertTable("categoryTable", $row1);
         $db->insertTable("accessory", $row2);
     }
+    
 }
