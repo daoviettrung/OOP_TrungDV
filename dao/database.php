@@ -1,5 +1,5 @@
 <?php
-include "muck_entity/product.php";
+include "entity/product.php";
 class database{
     protected $productTable =[] ;
     protected $categoryTable =[] ;
@@ -90,5 +90,8 @@ class database{
         if($name=="categoryTable"){
             array_splice($this->categoryTable,0,sizeof($this->accessoryTable));
         }
+    }
+    function tableById($id,$row){
+
     }
 }
