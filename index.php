@@ -1,10 +1,11 @@
 <?php
 include "dao/database.php";
 $db = new database();
-$db->insertTable("productTable",2);
-$db->insertTable("productTable",2);
-$db->insertTable("productTable",2);
-$db->updatable("productTable",1);
-$db->deleteTable("productTable",1);
-$db->truncateTable("productTable");
+$row= new product(1,"trung","ma");
+$row2= new product(2,"trung2","ma");
+$row1= new product(1,"ttttt","quy");
+$db->insertTable("productTable",$row);
+$db->insertTable("productTable",$row2);
+$db->updatable("productTable",$row1);
+$db->deleteTable("productTable",$row1);
 $db->selectTable("productTable");

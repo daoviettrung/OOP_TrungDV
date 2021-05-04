@@ -1,67 +1,54 @@
 <?php
 include "dao/database.php";
-class DatabaseDemo{
+class DatabaseDemo
+{
     function __construct()
     {
         $this->insertTableTest();
         var_dump($this->selectTableTest());
     }
 
-    function insertTableTest(){
+    function insertTableTest()
+    {
         $db = new database();
-        $db->insertTable("productTable",1);
-        $db->insertTable("productTable",2);
-        $db->insertTable("productTable",3);
+        $row = new product(1, "trung", "ma");
+        $row2 = new product(2, "trung2", "ma");
+        $row1 = new product(3, "ttttt", "quy");
+        $db->insertTable("productTable", $row);
+        $db->insertTable("productTable", $row1);
+        $db->insertTable("productTable", $row2);
     }
-    function selectTableTest(){
+    function selectTableTest()
+    {
         $db = new database();
         $db->selectTable("productTable");
     }
-    function updateTableTest(){
+    function updateTableTest()
+    {
         $db = new database();
-        $db->updatable("productTable",1);
+        $row = new product(1, "trung", "dep trai");
+        $db->updatable("productTable", $row);
     }
-    function deleteTableTest(){
+    function deleteTableTest()
+    {
         $db = new database();
-        $db->deleteTable("productTable",1);
+        $row = new product(1, "trung", "dep trai");
+        $db->deleteTable("productTable", $row);
     }
-    function trucateTableTest(){
+    function trucateTableTest()
+    {
         $db = new database();
+
         $db->truncateTable("productTable");
     }
-    function initDatabase(){
+    function initDatabase()
+    {
         $db = new database();
-        $db->insertTable("productTable",1);
-        $db->insertTable("productTable",2);
-        $db->insertTable("productTable",3);
-        $db->insertTable("productTable",1);
-        $db->insertTable("productTable",2);
-        $db->insertTable("productTable",3);
-        $db->insertTable("productTable",1);
-        $db->insertTable("productTable",2);
-        $db->insertTable("productTable",3);
-        $db->insertTable("productTable",3);
-
-        $db->insertTable("categoryTable",1);
-        $db->insertTable("categoryTable",2);
-        $db->insertTable("categoryTable",3);
-        $db->insertTable("categoryTable",1);
-        $db->insertTable("categoryTable",2);
-        $db->insertTable("categoryTable",3);
-        $db->insertTable("categoryTable",1);
-        $db->insertTable("categoryTable",2);
-        $db->insertTable("categoryTable",3);
-        $db->insertTable("categoryTable",3);
-
-        $db->insertTable("accessoryTable",1);
-        $db->insertTable("accessoryTable",2);
-        $db->insertTable("accessoryTable",3);
-        $db->insertTable("accessoryTable",1);
-        $db->insertTable("accessoryTable",2);
-        $db->insertTable("accessoryTable",3);
-        $db->insertTable("accessoryTable",1);
-        $db->insertTable("accessoryTable",2);
-        $db->insertTable("accessoryTable",3);
-        $db->insertTable("accessoryTable",3);
+        $row = new product(6, "trung", "coder");
+        $row1 = new category(1, "trung", "category");
+        $row2 = new accessory(1, "trung", "accessory");
+        $db->insertTable("productTable", $row);
+        $db->insertTable("categoryTable", $row1);
+        $db->insertTable("accessory", $row2);
     }
 }

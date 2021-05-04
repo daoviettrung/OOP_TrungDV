@@ -3,7 +3,7 @@ class product{
     protected $id;
     protected $name;
     protected $categoryId;
-    function product($id,$name,$categoryId)
+    function __construct($id,$name,$categoryId)
     {
         $this->id=$id;
         $this->name= $name;

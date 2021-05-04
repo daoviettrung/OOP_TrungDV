@@ -2,7 +2,7 @@
 class accessory{
     protected $id;
     protected $name;
-    function accessory($id,$name)
+    function __construct($id,$name)
     {
         $this->id=$id;
         $this->name= $name;

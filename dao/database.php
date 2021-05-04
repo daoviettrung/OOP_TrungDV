@@ -19,8 +19,9 @@ class database{
     }
     function selectTable($name){
         if($name=="productTable"){
-            foreach ($this->productTable as $key => $value){
-                echo "{$key} => {$value} ";
+            var_dump($this->productTable);
+            foreach ($this->productTable as $p){
+               var_dump($p);
             }
         }
         if($name=="categoryTable"){
@@ -36,46 +37,46 @@ class database{
     }
     function updatable($name,$row){
         if($name=="productTable"){
-            for($i=0;$i< sizeof($this->productTable);$i++){
-                if($i==$row){
-                    $this->productTable[$i]=$row;
+            for($i=0;$i <sizeof($this->productTable); $i++){
+                if($this->productTable[$i]->getId()== $row->getId()){
+                    $this->productTable[$i] = $row;
                 }
             }
         }
         if($name=="categoryTable"){
-            for($i=0;$i< sizeof($this->categoryTable);$i++){
-                if($i==$row){
-                    $this->categoryTable[$i]=$row;
+            for($i=0;$i <sizeof($this->categoryTable); $i++){
+                if($this->categoryTable[$i]->getId()== $row->getId()){
+                    $this->categoryTable[$i] = $row;
                 }
             }
         }
         if($name=="accessoryTable"){
-            for($i=0;$i< sizeof($this->accessoryTable);$i++){
-                if($i==$row){
-                    $this->accessoryTable[$i]=$row;
+            for($i=0;$i <sizeof($this->accessoryTable); $i++){
+                if($this->accessoryTable[$i]->getId()== $row->getId()){
+                    $this->accessoryTable[$i] = $row;
                 }
             }
         }
     }
     function deleteTable($name,$row){
         if($name=="productTable"){
-            for($i=0;$i< sizeof($this->productTable);$i++){
-                if($i==$row){
-                    array_splice($this->productTable,$row,$row);
+            for($i=0;$i <sizeof($this->productTable); $i++){
+                if($this->productTable[$i]->getId()== $row->getId()){
+                   unset($this->productTable[$i]);
                 }
             }
         }
         if($name=="categoryTable"){
-            for($i=0;$i< sizeof($this->productTable);$i++){
-                if($i==$row){
-                    array_splice($this->categoryTable,$row,$row);
+            for($i=0;$i <sizeof($this->categoryTable); $i++){
+                if($this->categoryTable[$i]->getId()== $row->getId()){
+                    unset($this->categoryTable[$i]);
                 }
             }
         }
         if($name=="accessoryTable"){
-            for($i=0;$i< sizeof($this->productTable);$i++){
-                if($i==$row){
-                    array_splice($this->accessoryTable,$row,$row);
+            for($i=0;$i <sizeof($this->accessoryTable); $i++){
+                if($this->accessoryTable[$i]->getId()== $row->getId()){
+                    unset($this->accessoryTable[$i]);
                 }
             }
         }
