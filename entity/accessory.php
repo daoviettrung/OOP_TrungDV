@@ -1,22 +1,9 @@
 <?php
-class accessory{
-    protected $id;
-    protected $name;
+require_once("BaseRow.php") ;
+class accessory extends BaseRow{
     function __construct($id,$name)
     {
-        $this->id=$id;
-        $this->name= $name;
+        parent::__construct($id,$name);
     }
-    function setId($id){
-        $this->id=$id;
-    }
-    function setName($name){
-        $this->name=$name;
-    }
-    function getId(){
-        return $this->id;
-    }
-    function getName(){
-        return $this->name;
-    }
+
 }

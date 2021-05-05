@@ -1,30 +1,16 @@
 <?php 
-class product{
-    protected $id;
-    protected $name;
+require_once("../BaseRow.php");
+class product extends BaseRow implements ientity{
     protected $categoryId;
     function __construct($id,$name,$categoryId)
     {
-        $this->id=$id;
-        $this->name= $name;
+        parent::__construct($id,$name);
         $this->categoryId=$categoryId;
-    }
-    function setId($id){
-        $this->id=$id;
     }
     function setCategoryId($categoryId){
         $this->categoryId= $categoryId;
     }
-    function setName($name){
-        $this->name=$name;
-    }
-    function getId(){
-        return $this->id;
-    }
-    function getName(){
-        return $this->name;
-    }
-    function getCategory(){
+    function getCategoryId(){
         return $this->categoryId;
     }
 

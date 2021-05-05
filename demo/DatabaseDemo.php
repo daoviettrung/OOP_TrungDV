@@ -1,5 +1,5 @@
 <?php
-include "dao/database.php";
+require_once("dao/database.php") ;
 class DatabaseDemo
 {
     function __construct()
