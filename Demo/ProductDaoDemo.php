@@ -1,7 +1,8 @@
 <?php
-
-require_once("../Dao/ProductDao.php") ;
-require_once("../Entity/Product.php") ;
+@ini_set('display_startup_errors',1);
+@ini_set('display_errors',1);
+require_once("../Dao/ProductDao.php");
+require_once("../Entity/Product.php");
 
 class ProductDaoDemo
 {
@@ -44,4 +45,6 @@ class ProductDaoDemo
         return $productDao->findByName("trung");
     }
 }
-
+$productDaoDemo= new ProductDaoDemo();
+$productDaoDemo->insertTest();
+var_dump($productDaoDemo->selectTest());

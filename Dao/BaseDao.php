@@ -1,6 +1,7 @@
 <?php
 
 require_once( "../Contans/contans.php");
+require_once( "Database.php");
 
 abstract class BaseDao
 {
@@ -8,25 +9,13 @@ abstract class BaseDao
     {
         $db = Database::getInstance();
         if (get_class($row) == PRODUCT) {
-            if ($db->insertTable(PRODUCT, $row)) {
-                return true;
-            } else {
-                return false;
-            }
+            return ($db->insertTable(PRODUCT, $row)) ? true : false; 
         }
         if (get_class($row) == CATEGORY) {
-            if ($db->insertTable(CATEGORY, $row)) {
-                return true;
-            } else {
-                return false;
-            }
+            return ($db->insertTable(CATEGORY, $row)) ? true : false; 
         }
         if (get_class($row) == ACCESSORY) {
-            if ($db->insertTable(ACCESSORY, $row)) {
-                return true;
-            } else {
-                return false;
-            }
+            return ($db->insertTable(CATEGORY, $row)) ? true : false; 
         }
     }
 
@@ -34,52 +23,28 @@ abstract class BaseDao
     {
         $db = Database::getInstance();
         if (get_class($row) == PRODUCT) {
-            if ($db->updateTable(PRODUCT, $row)) {
-                return true;
-            } else {
-                return false;
-            }
+            return ($db->updateTable(PRODUCT, $row)) ? true : false; 
         }
         if (get_class($row) == CATEGORY) {
-            if ($db->updateTable(CATEGORY, $row)) {
-                return true;
-            } else {
-                return false;
-            }
+            return ($db->updateTable(CATEGORY, $row)) ? true : false; 
         }
         if (get_class($row) == ACCESSORY) {
-            if ($db->updateTable(ACCESSORY, $row)) {
-                return true;
-            } else {
-                return false;
-            }
+            return ($db->updateTable(ACCESSORY, $row)) ? true : false; 
         }
     }
 
     function delete($row){
         $db = Database::getInstance();
         if (get_class($row) == PRODUCT) {
-            if ($db->deleteTable(PRODUCT, $row)) {
-                return true;
-            } else {
-                return false;
-            }
+            return ($db->deleteTable(PRODUCT, $row)) ? true : false; 
 
         }
         if (get_class($row) == CATEGORY) {
-            if ($db->deleteTable(CATEGORY, $row)) {
-                return true;
-            } else {
-                return false;
-            }
+            return ($db->deleteTable(CATEGORY, $row)) ? true : false;
 
         }
         if (get_class($row) == ACCESSORY) {
-            if ($db->deleteTable(ACCESSORY, $row)) {
-                return true;
-            } else {
-                return false;
-            }
+            return ($db->deleteTable(ACCESSORY, $row)) ? true : false;
         }
 
     }
