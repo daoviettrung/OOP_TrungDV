@@ -45,6 +45,4 @@ class ProductDaoDemo
         return $productDao->findByName("trung");
     }
 }
-$productDaoDemo= new ProductDaoDemo();
-$productDaoDemo->insertTest();
-var_dump($productDaoDemo->selectTest());
+
