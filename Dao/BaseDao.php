@@ -1,5 +1,7 @@
 <?php
+
 require_once( "../Contans/contans.php");
+
 abstract class BaseDao
 {
     function insert($row)
@@ -89,20 +91,17 @@ abstract class BaseDao
 
     function findById($id)
     {
-        $data = $this->findAll();
-
-        foreach ($data as $value) {
+        $dataObject = $this->findAll();
+        foreach ($dataObject as $value) {
             if ($value->getId() == $id) {
                 return $value;
             }
         }
-        return null;
-
     }
     function findByName($name){
-        $data = $this->findAll();
+        $dataObject = $this->findAll();
         $temp= [];
-        foreach ($data as $value) {
+        foreach ($dataObject as $value) {
             if ($value->getName() == $name) {
                 array_push($temp, $value);
             }

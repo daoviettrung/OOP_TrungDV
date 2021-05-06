@@ -1,33 +1,41 @@
 <?php
-require_once("../Dao/AccessoryDao.php") ;
-require_once("../Entity/Accessory.php") ;
-class CategoryDaoDemo{
-    function insertTest(){
-        $db = new AccessoryDao();
-        $row= new Accessory(1,"trung","abc");
-        return $db->insert($row);
+
+require_once("../Dao/AccessoryDao.php");
+require_once("../Entity/Accessory.php");
+
+class CategoryDaoDemo
+{
+    function insertTest()
+    {
+        $accessoryDao = new AccessoryDao();
+        $row= new Accessory(1, "trung", "abc");
+        return $accessoryDao->insert($row);
     }
 
-    function selectTest(){
-        $db = new AccessoryDao();
-        return $db->findAll();
+    function selectTest()
+    {
+        $accessoryDao = new AccessoryDao();
+        return $accessoryDao->findAll();
     }
 
-    function updatetest(){
-        $db = new AccessoryDao();
-        $row= new Accessory(1,"trung","abc");
-        return $db->update($row);
+    function updatetest()
+    {
+        $accessoryDao = new AccessoryDao();
+        $row= new Accessory(1, "trung", "abc");
+        return $accessoryDao->update($row);
     }
 
-    function delete(){
-        $db = new AccessoryDao();
-        $row= new Accessory(1,"trung","abc");
-        return $db->delete($row);
+    function delete()
+    {
+        $accessoryDao = new AccessoryDao();
+        $row= new Accessory(1, "trung", "abc");
+        return $accessoryDao->delete($row);
     }
 
-    function findByIdTest(){
-        $db = new AccessoryDao();
-        return $db->findById(2);
+    function findByIdTest()
+    {
+        $accessoryDao = new AccessoryDao();
+        return $accessoryDao->findById(2);
     }
 
 }

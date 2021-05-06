@@ -1,33 +1,41 @@
 <?php
-require_once("../Dao/CategoryDao.php") ;
-require_once("../Entity/Category.php") ;
-class CategoryDaoDemo{
-    function insertTest(){
-        $db = new CategoryDao();
-        $row= new Category(1,"trung","abc");
-        return $db->insert($row);
+
+require_once("../Dao/CategoryDao.php");
+require_once("../Entity/Category.php");
+
+class CategoryDaoDemo
+{
+    function insertTest()
+    {
+        $cateDao = new CategoryDao();
+        $row= new Category(1, "trung", "abc");
+        return $cateDao->insert($row);
     }
 
-    function selectTest(){
-        $db = new CategoryDao();
-        return $db->findAll();
+    function selectTest()
+    {
+        $cateDao = new CategoryDao();
+        return $cateDao->findAll();
     }
 
-    function updatetest(){
-        $db = new CategoryDao();
-        $row= new Category(1,"trung","abc");
-        return $db->update($row);
+    function updatetest()
+    {
+        $cateDao = new CategoryDao();
+        $row= new Category(1, "trung"," abc");
+        return $cateDao->update($row);
     }
 
-    function delete(){
-        $db = new CategoryDao();
-        $row= new Category(1,"trung","abc");
-        return $db->delete($row);
+    function delete()
+    {
+        $cateDao = new CategoryDao();
+        $row= new Category(1, "trung", "abc");
+        return $cateDao->delete($row);
     }
 
-    function findByIdTest(){
-        $db = new CategoryDao();
-        return $db->findById(2);
+    function findByIdTest()
+    {
+        $cateDao = new CategoryDao();
+        return $cateDao->findById(2);
     }
 
 }

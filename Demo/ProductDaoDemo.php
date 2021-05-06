@@ -1,38 +1,47 @@
 <?php
+
 require_once("../Dao/ProductDao.php") ;
 require_once("../Entity/Product.php") ;
-class ProductDaoDemo{
-    function insertTest(){
-        $db = new ProductDao();
-        $row= new Product(1,"trung","abc");
-        return $db->insert($row);
+
+class ProductDaoDemo
+{
+    function insertTest()
+    {
+        $productDao = new ProductDao();
+        $row= new Product(1, "trung", "abc");
+        return $productDao->insert($row);
     }
 
-    function selectTest(){
-        $db = new ProductDao();
-        return $db->findAll();
+    function selectTest()
+    {
+        $productDao = new ProductDao();
+        return $productDao->findAll();
     }
 
-    function updatetest(){
-        $db = new ProductDao();
-        $row= new product(1,"trung","abc");
-        return $db->update($row);
+    function updatetest()
+    {
+        $productDao = new ProductDao();
+        $row= new product(1, "trung", "abc");
+        return $productDao->update($row);
     }
 
-    function delete(){
-        $db = new ProductDao();
-        $row= new product(1,"trung","abc");
-        return $db->delete($row);
+    function delete()
+    {
+        $productDao = new ProductDao();
+        $row= new product(1, "trung", "abc");
+        return $productDao->delete($row);
     }
 
-    function findByIdTest(){
-        $db = new ProductDao();
-        return $db->findById(2);
+    function findByIdTest()
+    {
+        $productDao = new ProductDao();
+        return $productDao->findById(2);
     }
 
-    function findByNameTest(){
-        $db = new ProductDao();
-        return $db->findByName("trung");
+    function findByNameTest()
+    {
+        $productDao = new ProductDao();
+        return $productDao->findByName("trung");
     }
 }
 
