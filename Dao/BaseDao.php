@@ -1,5 +1,5 @@
 <?php
-require_once "contans.php";
+require_once( "../Contans/contans.php");
 abstract class BaseDao
 {
     function insert($row)
@@ -32,21 +32,21 @@ abstract class BaseDao
     {
         $db = Database::getInstance();
         if (get_class($row) == PRODUCT) {
-            if ($db->updatable(PRODUCT, $row)) {
+            if ($db->updateTable(PRODUCT, $row)) {
                 return true;
             } else {
                 return false;
             }
         }
         if (get_class($row) == CATEGORY) {
-            if ($db->updatable(CATEGORY, $row)) {
+            if ($db->updateTable(CATEGORY, $row)) {
                 return true;
             } else {
                 return false;
             }
         }
         if (get_class($row) == ACCESSORY) {
-            if ($db->updatable(ACCESSORY, $row)) {
+            if ($db->updateTable(ACCESSORY, $row)) {
                 return true;
             } else {
                 return false;

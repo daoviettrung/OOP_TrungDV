@@ -1,7 +1,7 @@
 <?php
 @ini_set('display_startup_errors', 1);
 @ini_set('display_errors', 1);
-require_once("../Dao/contans.php");
+require_once( "../Contans/contans.php");
 require_once("../Interface/InterfaceDao/InterfaceDatabase.php");
 class Database implements InterfaceDatabase
 {
@@ -53,7 +53,7 @@ class Database implements InterfaceDatabase
         return [];
     }
 
-    function updatable($name, $row)
+    function updateTable($name, $row)
     {
         if ($name == PRODUCT) {
             $size = sizeof($this->productTable);
@@ -131,7 +131,7 @@ class Database implements InterfaceDatabase
         }
     }
 
-    function updatetableById($id, $row)
+    function updateTableById($id, $row)
     {
         if (get_class($row) == PRODUCT) {
             for ($i = 0; $i < sizeof($this->productTable); $i++) {
