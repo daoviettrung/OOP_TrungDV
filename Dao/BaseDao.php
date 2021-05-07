@@ -1,59 +1,82 @@
 <?php
 
-require_once( "../Contans/contans.php");
-require_once( "Database.php");
+require_once("../Contans/contans.php");
+require_once("Database.php");
 
 abstract class BaseDao
 {
+    /**
+     * add object to array through the database class
+     * @param $row
+     * @return boolean
+     */
     function insert($row)
     {
         $db = Database::getInstance();
-        if (get_class($row) == PRODUCT) {
-            return ($db->insertTable(PRODUCT, $row)) ? true : false; 
+        if (get_class($row) == $this->tableName) {
+            return ($db->insertTable($this->tableName, $row)) ? true : false;
         }
-        if (get_class($row) == CATEGORY) {
-            return ($db->insertTable(CATEGORY, $row)) ? true : false; 
+        if (get_class($row) == $this->tableName) {
+            return ($db->insertTable($this->tableName, $row)) ? true : false;
         }
-        if (get_class($row) == ACCESSORY) {
-            return ($db->insertTable(CATEGORY, $row)) ? true : false; 
+        if (get_class($row) == $this->tableName) {
+            return ($db->insertTable($this->tableName, $row)) ? true : false;
         }
     }
 
+    /**
+     * update object to array through the database class
+     * @param $row
+     * @return boolean
+     */
     function update($row)
     {
         $db = Database::getInstance();
-        if (get_class($row) == PRODUCT) {
-            return ($db->updateTable(PRODUCT, $row)) ? true : false; 
+        if (get_class($row) == $this->tableName) {
+            return ($db->updateTable($this->tableName, $row)) ? true : false;
         }
-        if (get_class($row) == CATEGORY) {
-            return ($db->updateTable(CATEGORY, $row)) ? true : false; 
+        if (get_class($row) == $this->tableName) {
+            return ($db->updateTable($this->tableName, $row)) ? true : false;
         }
-        if (get_class($row) == ACCESSORY) {
-            return ($db->updateTable(ACCESSORY, $row)) ? true : false; 
+        if (get_class($row) == $this->tableName) {
+            return ($db->updateTable($this->tableName, $row)) ? true : false;
         }
     }
 
-    function delete($row){
+    /**
+     * delete object to array through the database class
+     * @param $row
+     * @return boolean
+     */
+    function delete($row)
+    {
         $db = Database::getInstance();
-        if (get_class($row) == PRODUCT) {
-            return ($db->deleteTable(PRODUCT, $row)) ? true : false; 
-
+        if (get_class($row) == $this->tableName) {
+            return ($db->deleteTable($this->tableName, $row)) ? true : false;
         }
-        if (get_class($row) == CATEGORY) {
-            return ($db->deleteTable(CATEGORY, $row)) ? true : false;
-
+        if (get_class($row) == $this->tableName) {
+            return ($db->deleteTable($this->tableName, $row)) ? true : false;
         }
-        if (get_class($row) == ACCESSORY) {
-            return ($db->deleteTable(ACCESSORY, $row)) ? true : false;
+        if (get_class($row) == $this->tableName) {
+            return ($db->deleteTable($this->tableName, $row)) ? true : false;
         }
-
     }
+
+    /**
+     * select array objects through the database class
+     * @return array
+     */
     function findAll()
     {
         $db = database::getInstance();
-        return $db->selectTable($this->nameObject);
+        return $db->selectTable($this->tableName);
     }
 
+    /**
+     * select object by id through the database class
+     * @param $id
+     * @return object
+     */
     function findById($id)
     {
         $dataObject = $this->findAll();
@@ -63,15 +86,21 @@ abstract class BaseDao
             }
         }
     }
-    function findByName($name){
+
+    /**
+     * select object by name through the database class
+     * @param $name
+     * @return array objects
+     */
+    function findByName($name)
+    {
         $dataObject = $this->findAll();
-        $temp= [];
+        $temp = [];
         foreach ($dataObject as $value) {
             if ($value->getName() == $name) {
                 array_push($temp, $value);
             }
         }
         return $temp;
-
     }
 }

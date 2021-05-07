@@ -6,5 +6,5 @@ require_once( "../Interface/InterfaceDao/IbaseDao.php");
 
 class CategoryDao extends BaseDao implements Ibasedao
 {
-    protected $nameObject = CATEGORY;
+    protected $tableName = CATEGORY;
 }

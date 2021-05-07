@@ -10,10 +10,18 @@ class Database implements InterfaceDatabase
     protected $accessoryTable = [];
     private static $_instance = NULL;
 
+    /**
+     * Initialize the object is private 
+     * Other classes cannot be instantiated with this function
+     */
     private function __construct()
     {
     }
 
+    /**
+     * Initialize the object by singleton 
+     * @return object
+     */
     static function getInstance()
     {
         if (self::$_instance == NULL) {
@@ -22,6 +30,10 @@ class Database implements InterfaceDatabase
         return self::$_instance;
     }
 
+    /**
+     * add object to array
+     * @return boolean
+     */
     function insertTable($name, $row)
     {
         if (get_class($row) == PRODUCT || get_class($row) == CATEGORY || get_class($row) == ACCESSORY) {
@@ -40,6 +52,11 @@ class Database implements InterfaceDatabase
         }
     }
 
+    /**
+     * select array by name
+     * @param $name
+     * @return array
+     */
     function selectTable($name)
     {
         if ($name == PRODUCT) {
@@ -55,6 +72,11 @@ class Database implements InterfaceDatabase
         return [];
     }
 
+    /**
+     * update array by name with value is row
+     * @param $name, $row
+     * @return boolean
+     */
     function updateTable($name, $row)
     {
         if (get_class($row) == PRODUCT || get_class($row) == CATEGORY || get_class($row) == ACCESSORY) {
@@ -88,6 +110,11 @@ class Database implements InterfaceDatabase
         }
     }
 
+    /**
+     * delete array by name with the value to be deleted is row
+     * @param $name, $row
+     * @return boolean
+     */
     function deleteTable($name, $row)
     {
         if (get_class($row) == PRODUCT || get_class($row) == CATEGORY || get_class($row) == ACCESSORY) {
@@ -121,6 +148,11 @@ class Database implements InterfaceDatabase
         }
     }
 
+    /**
+     * delete array by name with the value to be deleted is row
+     * @param $name, $row
+     * @return boolean
+     */
     function truncateTable($name)
     {
         if ($name == PRODUCT) {
@@ -137,6 +169,11 @@ class Database implements InterfaceDatabase
         }
     }
 
+    /**
+     * update object by id with value is row
+     * @param $name, $row
+     * @return boolean
+     */
     function updateTableById($id, $row)
     {
         if (get_class($row) == PRODUCT || get_class($row) == CATEGORY || get_class($row) == ACCESSORY) {

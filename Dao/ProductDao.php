@@ -1,12 +1,12 @@
 <?php
 
-require_once( "../Interface/InterfaceDao/IbaseDao.php");
+require_once( "../Interface/InterfaceDao/IBaseDao.php");
 require_once( "BaseDao.php");
 require_once( "../Contans/contans.php");
 
-class ProductDao extends BaseDao implements Ibasedao
+class ProductDao extends BaseDao implements IBasedao
 {
-    protected $nameObject = PRODUCT;
+    protected $tableName = PRODUCT;
     
 }
 

@@ -6,6 +6,6 @@ require_once( "../Interface/InterfaceDao/IbaseDao.php");
 
 class AccessoryDao extends BaseDao implements Ibasedao
 {
-    protected $nameObject = ACCESSORY;
+    protected $tableName = ACCESSORY;
 }
 
