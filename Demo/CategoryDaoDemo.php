@@ -12,7 +12,7 @@ class CategoryDaoDemo
     function insertTest()
     {
         $cateDao = new CategoryDao();
-        $row = new Category(1, "trung", "abc");
+        $row = new Category(1, "trung1");
         return $cateDao->insert($row);
     }
 

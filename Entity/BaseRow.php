@@ -7,7 +7,8 @@ abstract class BaseRow
 
     /**
      * Initialize the object
-     * @param $id, $name
+     * @param $id is id of object
+     * @param $name is name of object
      */
     function __construct($id, $name)
     {
@@ -17,7 +18,7 @@ abstract class BaseRow
 
     /**
      * set id to objects
-     * @param $id
+     * @param $id is id an object
      */
     function setId($id)
     {
@@ -26,7 +27,7 @@ abstract class BaseRow
 
     /**
      * set name to objects
-     * @param $name
+     * @param $name is name an object
      */
     function setName($name)
     {

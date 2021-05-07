@@ -32,6 +32,8 @@ class Database implements InterfaceDatabase
 
     /**
      * add object to array
+     * @param $name is name table need update
+     * @param $row is value update
      * @return boolean
      */
     function insertTable($name, $row)
@@ -74,7 +76,8 @@ class Database implements InterfaceDatabase
 
     /**
      * update array by name with value is row
-     * @param $name, $row
+     * @param $name is name table need update
+     * @param $row is value update
      * @return boolean
      */
     function updateTable($name, $row)
@@ -112,7 +115,8 @@ class Database implements InterfaceDatabase
 
     /**
      * delete array by name with the value to be deleted is row
-     * @param $name, $row
+     * @param $name is name table need delete
+     * @param $row is value need delete
      * @return boolean
      */
     function deleteTable($name, $row)
@@ -150,7 +154,7 @@ class Database implements InterfaceDatabase
 
     /**
      * delete array by name with the value to be deleted is row
-     * @param $name, $row
+     * @param $name is name table need delete
      * @return boolean
      */
     function truncateTable($name)
@@ -171,7 +175,8 @@ class Database implements InterfaceDatabase
 
     /**
      * update object by id with value is row
-     * @param $name, $row
+     * @param $id is id object need update
+     * @param $row is value update
      * @return boolean
      */
     function updateTableById($id, $row)

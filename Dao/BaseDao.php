@@ -7,7 +7,7 @@ abstract class BaseDao
 {
     /**
      * add object to array through the database class
-     * @param $row
+     * @param $row value add new
      * @return boolean
      */
     function insert($row)
@@ -16,17 +16,11 @@ abstract class BaseDao
         if (get_class($row) == $this->tableName) {
             return ($db->insertTable($this->tableName, $row)) ? true : false;
         }
-        if (get_class($row) == $this->tableName) {
-            return ($db->insertTable($this->tableName, $row)) ? true : false;
-        }
-        if (get_class($row) == $this->tableName) {
-            return ($db->insertTable($this->tableName, $row)) ? true : false;
-        }
     }
 
     /**
      * update object to array through the database class
-     * @param $row
+     * @param $row is value update
      * @return boolean
      */
     function update($row)
@@ -35,28 +29,16 @@ abstract class BaseDao
         if (get_class($row) == $this->tableName) {
             return ($db->updateTable($this->tableName, $row)) ? true : false;
         }
-        if (get_class($row) == $this->tableName) {
-            return ($db->updateTable($this->tableName, $row)) ? true : false;
-        }
-        if (get_class($row) == $this->tableName) {
-            return ($db->updateTable($this->tableName, $row)) ? true : false;
-        }
     }
 
     /**
      * delete object to array through the database class
-     * @param $row
+     * @param $row is value need delete
      * @return boolean
      */
     function delete($row)
     {
         $db = Database::getInstance();
-        if (get_class($row) == $this->tableName) {
-            return ($db->deleteTable($this->tableName, $row)) ? true : false;
-        }
-        if (get_class($row) == $this->tableName) {
-            return ($db->deleteTable($this->tableName, $row)) ? true : false;
-        }
         if (get_class($row) == $this->tableName) {
             return ($db->deleteTable($this->tableName, $row)) ? true : false;
         }
@@ -74,7 +56,7 @@ abstract class BaseDao
 
     /**
      * select object by id through the database class
-     * @param $id
+     * @param $id is id object 
      * @return object
      */
     function findById($id)
@@ -89,7 +71,7 @@ abstract class BaseDao
 
     /**
      * select object by name through the database class
-     * @param $name
+     * @param $name is name table
      * @return array objects
      */
     function findByName($name)
